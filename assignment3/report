@@ -1,0 +1,44 @@
+After using this solution: 
+https://askubuntu.com/questions/1152570/npm-cant-find-module-semver-error-in-ubuntu-19-04
+
+to fix the "cant find semwer error"
+I installed npm and eslint.
+
+Starting with: npx eslint --init (choose the right answer to the questions)
+
+{style,none,none,no,browser,guide,airbnb,javascript,yes}
+
+I used this command: npx eslint get-weather.js --fix
+
+to fix all the errors
+
+(errors like "linebreaks" , "must use singlequote" , indentation of 2 spaces but found 4", "unexpected string concatenation)
+
+After fixing those, I used the command : npx prettier --write get-weather.js
+
+problems eslint could not fix : Line 19 body => body.toString()
+				 Line 22      => return 1;
+
+Which replaced '' by "" and adjusted some parts of the code.
+
+(which then... eslint wants to replace by singlequotes)
+
+
+------------- Question 2 ---------------------------------
+
+I used autopep8 for this question to automate the process.
+
+Installing pip: sudo apt install python3-pip
+
+Installing autopep8 : pip install --upgrade autopep8
+
+Using autopep8 to modify the file in place :
+
+autopep8 --in-place --aggressive --aggressive get-weather.js
+
+source for this last command: https://pypi.org/project/autopep8/
+
+I did my example with Lisbon: get-weather.py -n Lisbon search
+				returns: City ID: 742676
+			       get-weather.py -c 742676 get-weather
+			        returns City: Lisbon; Weather State: Heavy Cloud
